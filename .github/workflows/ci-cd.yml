@@ -131,15 +131,9 @@ jobs:
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: |
           echo "## 🚀 Published Container Artifact to GHCR" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "- **Image Repository:** \`ghcr.io/${{ github.repository }}\`" >> $GITHUB_STEP_SUMMARY
-          echo "- **SHA256 Digest:** \`${{ steps.push_artifact.outputs.digest }}\`" >> $GITHUB_STEP_SUMMARY
-          echo "- **Published Version Tags:**" >> $GITHUB_STEP_SUMMARY
-          for tag in ${{ steps.meta.outputs.tags }}; do
-            echo "  - \`$tag\`" >> $GITHUB_STEP_SUMMARY
-          done
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "### 🔄 Fast Rollback Command:" >> $GITHUB_STEP_SUMMARY
+          echo "**Image Name:** \`ghcr.io/${{ github.repository_owner }}/hotel-booking-api\`" >> $GITHUB_STEP_SUMMARY
+          echo "**Version Tag:** \`sha-${{ github.sha }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "### 🔄 Quick Rollback Command:" >> $GITHUB_STEP_SUMMARY
           echo "\`\`\`bash" >> $GITHUB_STEP_SUMMARY
-          echo "IMAGE_NAME=ghcr.io/${{ github.repository }} IMAGE_TAG=sha-${GITHUB_SHA::7} docker compose up -d" >> $GITHUB_STEP_SUMMARY
+          echo "IMAGE_NAME=ghcr.io/${{ github.repository_owner }}/hotel-booking-api IMAGE_TAG=sha-${{ github.sha }} docker compose up -d" >> $GITHUB_STEP_SUMMARY
           echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
