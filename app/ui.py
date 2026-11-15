@@ -217,8 +217,8 @@ INDEX_HTML = """<!DOCTYPE html>
                             </h2>
                             <p class="text-xs text-gray-200 font-normal mt-1">Instant booking with PostgreSQL GiST exclusion lock</p>
                         </div>
-                        <span class="text-[10px] font-mono font-bold text-white bg-white/20 border border-white/30 px-3 py-1 rounded-full shadow-sm">
-                            SELECT FOR UPDATE
+                        <span class="text-xs font-mono bg-blue-500/20 text-blue-300 border border-blue-500/50 px-3 py-1 rounded-full uppercase tracking-widest shadow-sm backdrop-blur-sm">
+                            Select for Update
                         </span>
                     </div>
 
