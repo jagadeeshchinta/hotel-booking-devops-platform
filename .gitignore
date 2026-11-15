@@ -1,0 +1,33 @@
+# Environment variables
+.env
+.env.local
+
+# Python / Virtual Environment
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+env/
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Linters & Tools
+.ruff_cache/
+.mypy_cache/
+
+# Certificates & Backups
+certs/
+backups/*.sql
+!backups/.gitkeep
+
+# IDE & OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+

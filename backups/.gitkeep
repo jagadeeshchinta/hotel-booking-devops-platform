@@ -1,0 +1,2 @@
+# Keep backups folder tracked in git while ignoring *.sql dumps
+
